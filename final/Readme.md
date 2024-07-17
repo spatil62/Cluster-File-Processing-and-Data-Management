@@ -1,11 +1,10 @@
 # Final Project
 
-This will be the description and deliverable for the final project for ITMD 521
+This will be the description and deliverable for the final project 
 
 ## General Notes
 
 * All commits and code must be placed in the private repo assigned at the beginning of the semester
-  * Under the folder: `itmd-521` > `final`
   * Include a **Readme.md** file in the `final` directory with instructions and commands to run each of your scripts
   * Create a sub-folder: `part-one`, `part-two`, `part-three`
   * In each sub-folder provide the PySpark `.py` files to accomplish the requirements
@@ -13,7 +12,6 @@ This will be the description and deliverable for the final project for ITMD 521
 * Clone/pull you code to the spark edge server account you were given access to
 * Clone via SSH key - as demonstrated in the video prepared 04/19
 
-* Make use of any of the sample code provided to you in Blackboard
 * Make extensive use of the [PySpark API documentation](https://spark.apache.org/docs/latest/api/python/index.html "PySpark API documentation") 
 * Make extensive use of the Textbook -- don't go to the internet
 * Make extensive use of the Disucssion Board for clarifications and questions
@@ -131,9 +129,3 @@ Example:
 
 ```nohup spark-submit --master spark://192.168.172.23:7077 --packages "org.apache.hadoop:hadoop-aws:3.2.2" --driver-memory 2G --executor-memory 4G --executor-cores 1 ncdc-single-partition-csv.py 50.txt 50.csv csv &```
 
-## Due Date and Finals Presentation
-
-* Submit the URL to your GitHub account to Blackboard by 11:59 pm, Sunday 04/30
-  * Worth 80 points
-* Thursday May 5th, during the scheduled final exam period you will demonstrate and answer questions about your answers and the results of `part-three` and give a verbal explanation (Use the textbook as your source for explanations)
-  * Worth 20 points
