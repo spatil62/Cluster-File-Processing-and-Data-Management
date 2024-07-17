@@ -10,7 +10,6 @@ This will be the description and deliverable for the final project
   * In each sub-folder provide the PySpark `.py` files to accomplish the requirements
   * I will run this to check your work and compare output
 * Clone/pull you code to the spark edge server account you were given access to
-* Clone via SSH key - as demonstrated in the video prepared 04/19
 
 * Make extensive use of the [PySpark API documentation](https://spark.apache.org/docs/latest/api/python/index.html "PySpark API documentation") 
 * Make extensive use of the Textbook -- don't go to the internet
