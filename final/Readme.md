@@ -9,7 +9,6 @@ The first part of the assignment you will be data engineering. You will be conve
 
 * Use the raw data set you were assigned
 * Use these initial parametersfor each job:
-  * ``` --driver-memory 6G --executor-memory 6G --executor-cores 2 --num-executors 12 --total-executor-cores 24```
 
 * Create a PySpark application that will read the `30.txt` from the bucket into a DataFrame
   * Name the PySpark application `XYZ-minio-read-and-process-AA.py`
@@ -26,15 +25,10 @@ The first part of the assignment you will be data engineering. You will be conve
 You will continue your data engineering experience in needing to read Raw text file and convert them into CSV and Parquet files. 
 
 * Create multiple appropriate PySpark files to do the reading
-  * Name the PySpark applications in this manner: `minio-read-50.py`
-  * Change the last decade number to match
-  * Make sure to adjust the `SparkSession.builder.appName()` to be proper
 * Save them as CSV and Parquet files in your own assign Minio S3 bucket.
   * Use the same convention as the previous questuion
   * 20-csv
   * 20-parquet
-
-As a hint - do a test run on a small dataset - say 20.txt to see if your logic and bucket permissions are working before starting the larger jobs.
 
 ### Part Two
 
@@ -51,15 +45,7 @@ This part you will read the datasets you created back into your PySpark applicat
 * Read your partitioned csv into a DataFrame named: `parquetdf`
   * Show the first 10 records and print the schema
 * Connect to the MariaDB server using the below details in your PySpark application
-  * Connect to the database `ncdc` and table `thirties` to read out the dataframe 
-  * Show the first 10 records and print the schema
-  * Username and Password will be provided to you
 
-```python
-# Writing out to MySQL your DataFrame results
-# https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrameWriter.save.html
-(splitDF.write.format("jdbc").option("url","jdbc:mysql://database-240-vm0.service.consul:3306/ncdc").option("driver","com.mysql.cj.jdbc.Driver").option("dbtable","thirty").option("user",os.getenv('MYSQLUSER')).option("truncate",True).mode("overwrite").option("password", os.getenv('MYSQLPASS')).save())
-```
 
 ### Part-Three
 
@@ -103,11 +89,4 @@ This part you will do some basic analytics using the Spark SQL or the native PyS
     * Will have to construct a schema
     * May want to make use of temp tables to keep smaller sets of data in memory
 
-### Final Note
-
-These jobs might take a while to process, potentially hours--**Don't wait!**.  You can execute jobs and add them to the queue -- when resources free up, your job will execute.  You can submit a job to execute without having to keep your computer open all the time by using the `nohup` command, put `nohup` in front of your command and a `&` at the end will background and allow you to disconnect from the spark edge server (not hang up). 
-
-Example: 
-
-```nohup spark-submit --master spark://192.168.172.23:7077 --packages "org.apache.hadoop:hadoop-aws:3.2.2" --driver-memory 2G --executor-memory 4G --executor-cores 1 ncdc-single-partition-csv.py 50.txt 50.csv csv &```
 
