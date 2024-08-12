@@ -1,19 +1,3 @@
-# Final Project
-
-This will be the description and deliverable for the final project 
-
-## General Notes
-
-* All commits and code must be placed in the private repo assigned at the beginning of the semester
-  * Include a **Readme.md** file in the `final` directory with instructions and commands to run each of your scripts
-  * Create a sub-folder: `part-one`, `part-two`, `part-three`
-  * In each sub-folder provide the PySpark `.py` files to accomplish the requirements
-  * I will run this to check your work and compare output
-* Clone/pull you code to the spark edge server account you were given access to
-
-* Make extensive use of the [PySpark API documentation](https://spark.apache.org/docs/latest/api/python/index.html "PySpark API documentation") 
-* Make extensive use of the Textbook -- don't go to the internet
-* Make extensive use of the Disucssion Board for clarifications and questions
 
 ### Part One
 
@@ -27,10 +11,9 @@ The first part of the assignment you will be data engineering. You will be conve
 * Use these initial parametersfor each job:
   * ``` --driver-memory 6G --executor-memory 6G --executor-cores 2 --num-executors 12 --total-executor-cores 24```
 
-* Create a PySpark application that will read the `30.txt` from the `itmd521` bucket into a DataFrame
+* Create a PySpark application that will read the `30.txt` from the bucket into a DataFrame
   * Name the PySpark application `XYZ-minio-read-and-process-AA.py`
-  * Where XYZ is your initials
-  * and AA is the decade you are working on
+  * AA is the decade you are working on
 * In the same PySpark application parse the raw datasource assigned into the assigned 5 outputs and name the results the same prefix as the source (20.txt becomes 20-csv, or 20-csv-lz4, or 20-single-part-csv for example).
   * csv
   * json
@@ -40,7 +23,7 @@ The first part of the assignment you will be data engineering. You will be conve
 
 #### Second Section
 
-You will continue your data engineering experience in needing to read Raw text file and convert them into CSV and Parquet files. Based on your lastname starting with A-K you will need to convert the decades 30, 40, 70, and 90. Lastname L-Z will do 40, 60, and 80. These files get quite large and may take up to 15 to 48 hours to complete -- don't wait. 
+You will continue your data engineering experience in needing to read Raw text file and convert them into CSV and Parquet files. 
 
 * Create multiple appropriate PySpark files to do the reading
   * Name the PySpark applications in this manner: `minio-read-50.py`
