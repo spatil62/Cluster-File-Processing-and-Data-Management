@@ -14,7 +14,7 @@ conf = SparkConf()
 #Removed Some configuration 
 
 # Create SparkSession Object - tell the cluster the FQDN of the host system)
-spark = SparkSession.builder.appName("spatil62-minio-read-part2").config('spark.driver.host','spark-edge-vm0.service.consul').config(conf=conf).getOrCreate()
+spark = SparkSession.builder.appName("spatil62-minio-read-part2").config('spark.driver.host','').config(conf=conf).getOrCreate()
 
 df = spark.read.csv('s3:30.txt')
 
