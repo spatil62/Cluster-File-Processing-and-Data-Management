@@ -11,7 +11,7 @@ The first part of the assignment you will be data engineering. You will be conve
 * Use these initial parametersfor each job:
 
 * Create a PySpark application that will read the `30.txt` from the bucket into a DataFrame
-  * Name the PySpark application `XYZ-minio-read-and-process-AA.py`
+  * Name the PySpark application 
   * AA is the decade you are working on
 * In the same PySpark application parse the raw datasource assigned into the assigned 5 outputs and name the results the same prefix as the source (20.txt becomes 20-csv, or 20-csv-lz4, or 20-single-part-csv for example).
   * csv
@@ -35,12 +35,9 @@ You will continue your data engineering experience in needing to read Raw text f
 This part you will read the datasets you created back into your PySpark application and create schemas where necessary.
 
 * Create a single PySpark application
-  * Name: `XYZ-minio-read.py` 
 * Read your partitioned csv into a DataFrame named: `csvdf`
-  * Create a schema based on the sample given in blackboard
 * Show the first 10 records and print the schema
 * Read your partitioned csv into a DataFrame named: `jsondf`
-  * Create a schema based on the sample given in Blackboard
 * Show the first 10 records and print the schema
 * Read your partitioned csv into a DataFrame named: `parquetdf`
   * Show the first 10 records and print the schema
@@ -85,7 +82,7 @@ This part you will do some basic analytics using the Spark SQL or the native PyS
   * You may have to add filters to remove records that have values that are legal but not real -- such as 9999
   * Find AVG air temperature per StationID in the month of February
   * Write these value out to a DataFrame and save this to a Parquet file you created in your bucket
-    * Name the file `XYZ-part-four-answers-parquet`
+    * Name the file 
     * Will have to construct a schema
     * May want to make use of temp tables to keep smaller sets of data in memory
 
